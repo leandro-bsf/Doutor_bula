@@ -60,7 +60,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col md:flex-row">
-    <!-- Menu lateral -->
+
     <div className="bg-gray-100 p-4 pt-20 w-full md:w-64">
       <h2 className="text-xl font-bold mb-4 text-black">Categorias</h2>
       <ul className='font-bold text-black'>
@@ -78,7 +78,7 @@ export default function Home() {
       </ul>
     </div>
   
-    <!-- Conteúdo principal -->
+  
     <div className="p-4 md:p-8 flex-grow bg-white">
       <div className="flex items-center space-x-4 md:space-x-9 mb-4">
         <span className="font-bold text-lg text-black">Doutor Bula</span>
