@@ -60,15 +60,15 @@ export default function Home() {
 
   return (
     <div className="flex flex-col md:flex-row">
-   
+    <!-- Menu lateral -->
     <div className="bg-gray-100 p-4 pt-20 w-full md:w-64">
-      <h2 className="text-xl font-bold mb-4">Categorias</h2>
-      <ul className='font-bold'>
+      <h2 className="text-xl font-bold mb-4 text-black">Categorias</h2>
+      <ul className='font-bold text-black'>
         {categorias.map((categoria) => (
           <li
             key={categoria.id}
             className={`cursor-pointer p-2 rounded-lg mb-1 ${
-              selectedCategoria === categoria.id ? 'bg-blue-500 text-white' : 'hover:bg-gray-200'
+              selectedCategoria === categoria.id ? 'bg-blue-500 text-white' : 'hover:bg-gray-200 text-black'
             }`}
             onClick={() => handleCategoriaSelect(categoria.id)}
           >
@@ -77,10 +77,11 @@ export default function Home() {
         ))}
       </ul>
     </div>
-   
-    <div className="p-4 md:p-8 flex-grow">
+  
+    <!-- Conteúdo principal -->
+    <div className="p-4 md:p-8 flex-grow bg-white">
       <div className="flex items-center space-x-4 md:space-x-9 mb-4">
-        <span className="font-bold text-lg text-gray-800">Doutor Bula</span>
+        <span className="font-bold text-lg text-black">Doutor Bula</span>
         <SearchInput onSearch={handleSearch} />
       </div>
   
