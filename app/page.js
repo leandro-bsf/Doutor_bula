@@ -59,35 +59,34 @@ export default function Home() {
   };
 
   return (
-    <div className="flex">
-    
-      <div className="w-64 bg-gray-100 p-4 pt-20">
-       
-        <ul className=' font-bold w-200'>
-        <h2 className="text-xl font-bold mb-4">Categorias</h2>
-          {categorias.map((categoria) => (
-            <li
-              key={categoria.id}
-              className={`cursor-pointer p-2 rounded-lg ${
-                selectedCategoria === categoria.id ? 'bg-blue-500 text-white' : 'hover:bg-gray-200'
-              }`}
-              onClick={() => handleCategoriaSelect(categoria.id)}
-            >
-              {categoria.descricao}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="p-8 flex-grow">
-      <div className="flex items-center space-x-9">
-    <span className="font-bold text-lg text-gray-800">Doutor Bula</span>
-    <SearchInput onSearch={handleSearch} />
-  </div>
-
-      
-        <RemedioGrid produtos={produtos} onSelect={setSelectedProduto} />
-        <RemedioModal produto={selectedProduto} onClose={() => setSelectedProduto(null)} />
-      </div>
+    <div className="flex flex-col md:flex-row">
+   
+    <div className="bg-gray-100 p-4 pt-20 w-full md:w-64">
+      <h2 className="text-xl font-bold mb-4">Categorias</h2>
+      <ul className='font-bold'>
+        {categorias.map((categoria) => (
+          <li
+            key={categoria.id}
+            className={`cursor-pointer p-2 rounded-lg mb-1 ${
+              selectedCategoria === categoria.id ? 'bg-blue-500 text-white' : 'hover:bg-gray-200'
+            }`}
+            onClick={() => handleCategoriaSelect(categoria.id)}
+          >
+            {categoria.descricao}
+          </li>
+        ))}
+      </ul>
     </div>
+   
+    <div className="p-4 md:p-8 flex-grow">
+      <div className="flex items-center space-x-4 md:space-x-9 mb-4">
+        <span className="font-bold text-lg text-gray-800">Doutor Bula</span>
+        <SearchInput onSearch={handleSearch} />
+      </div>
+  
+      <RemedioGrid produtos={produtos} onSelect={setSelectedProduto} />
+      <RemedioModal produto={selectedProduto} onClose={() => setSelectedProduto(null)} />
+    </div>
+  </div>
   );
 }
