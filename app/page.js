@@ -67,7 +67,7 @@ export default function Home() {
         {categorias.map((categoria) => (
           <li
             key={categoria.id}
-            className={`cursor-pointer p-2 rounded-lg mb-1 ${
+            className={`cursor-pointer p-2 rounded-lg mb-1 text-black ${
               selectedCategoria === categoria.id ? 'bg-blue-500 text-white' : 'hover:bg-gray-200 text-black'
             }`}
             onClick={() => handleCategoriaSelect(categoria.id)}
